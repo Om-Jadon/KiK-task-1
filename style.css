@@ -1,0 +1,633 @@
+/* TO DO:
+2. make the website scallable + ham burger
+3. modal in best sellers section
+4. dark mode
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #d9efe3;
+}
+
+.navigation-bar {
+  display: flex;
+  background: rgb(3, 45, 38);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  z-index: 1;
+}
+
+.navigation-bar .logo-image-and-text {
+  display: flex;
+  gap: 20%;
+}
+
+.navigation-bar .logo {
+  width: 60px;
+  height: auto;
+}
+
+.navigation-bar .website-name {
+  color: white;
+  margin-top: 8px;
+  font-size: 34px;
+  font-family: "Helvetica", Courier, monospace;
+  transition: transform 0.3s ease;
+  font-weight: bold;
+}
+
+.navigation-bar .website-name:hover {
+  transform: scale(1.1);
+}
+
+.navigation-bar .nav-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+  margin-right: 5%;
+}
+
+.navigation-bar .nav-links a {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 23px;
+  padding: 0px 30px;
+}
+
+.navigation-bar .nav-links a {
+  transition: transform 0.3s ease;
+}
+
+.navigation-bar .nav-links a:hover {
+  transform: scale(1.2);
+  text-decoration: underline;
+  color: bisque;
+}
+
+.intro-page {
+  display: flex;
+}
+
+.intro-page .big-logo {
+  width: auto;
+  height: auto;
+}
+
+.right-intro-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.right-intro-page h1.title {
+  font-family: "Helvetica", Courier, monospace;
+  font-size: 800%;
+}
+
+.right-intro-page h2.subtitle {
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.intro-page .best-sellers-button {
+  padding: 8px 15px;
+  font-size: 25px;
+  text-align: center;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 7%;
+}
+
+.intro-page .best-sellers-button:hover {
+  background-color: #2980b9;
+}
+
+.best-selling-books .title {
+  font-size: 80px;
+  text-align: center;
+  font-family: "Helvetica", Courier, monospace;
+  letter-spacing: 3px;
+  font-weight: bold;
+  word-spacing: 10px;
+  padding-top: 50px;
+}
+
+.best-selling-books .subtitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.best-selling-books .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 4%;
+  margin: 80px 45px;
+}
+
+.best-selling-books .card {
+  display: flex;
+  position: relative;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 40px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 350px;
+  height: 700px;
+}
+
+.best-selling-books .card .book-cover {
+  width: 250px;
+  height: 400px;
+  border: 2px solid black;
+}
+
+.best-selling-books .card {
+  transition: transform 0.3s ease;
+}
+
+.best-selling-books .card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.best-selling-books .card .book-title {
+  padding-top: 5%;
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.best-selling-books .card .author {
+  padding-top: 2%;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.best-selling-books .card p {
+  font-family: Helvetica, sans-serif;
+}
+
+.best-selling-books .card .identifier {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.best-selling-books .card .price {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: aquamarine;
+  color: black;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.best-selling-books .know-more-button {
+  position: absolute;
+  bottom: 18px;
+  left: 10%;
+  font-size: 13px;
+  padding: 6px 8px;
+  background-color: aqua;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.best-selling-books .card:hover .know-more-button {
+  opacity: 1;
+}
+
+.recommendations .title {
+  font-size: 80px;
+  text-align: center;
+  font-family: "Helvetica", Courier, monospace;
+  letter-spacing: 3px;
+  font-weight: bold;
+  word-spacing: 10px;
+  padding-top: 50px;
+}
+
+.recommendations .subtitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.recommendations .search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.recommendations .search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 60px;
+  padding: 10px 20px;
+  border: 2px solid #4f806e;
+}
+
+.recommendations .search-box input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 25px;
+  color: #282739;
+}
+
+.recommendations .search-box ::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.recommendations .search-box button img {
+  width: 25px;
+}
+
+.recommendations .search-box button {
+  border: 0;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: #94e0c4;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.recommendations .search-box button:hover {
+  transform: scale(1.2);
+}
+
+.recommendations .cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8%;
+  margin: 80px 70px;
+}
+
+.recommendations .card {
+  display: flex;
+  position: relative;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding-top: 30px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.recommendations .card .book-cover {
+  width: 150px;
+  height: auto;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.recommendations .card .book-title {
+  padding-top: 5%;
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.recommendations .card .author {
+  padding-top: 2%;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.recommendations .card .price {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.recommendations .card {
+  transition: transform 0.3s ease;
+}
+
+.recommendations .card:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.recommendations .know-more-button {
+  font-size: 13px;
+  padding: 6px 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.recommendations .card:hover .know-more-button {
+  opacity: 1;
+}
+
+.review .title {
+  font-size: 80px;
+  text-align: center;
+  font-family: "Helvetica", Courier, monospace;
+  letter-spacing: 3px;
+  font-weight: bold;
+  word-spacing: 10px;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+.review .recent-text {
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  padding: 50px 50px 30px 0px;
+  margin-left: 2%;
+}
+
+.review .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.review .card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  width: 90%;
+  margin-left: 2%;
+}
+
+.review .card img {
+  padding: 10px 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.review .card .text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.review .card .name {
+  padding: 15px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.review .card .stars {
+  font-size: 30px;
+  color: #ffd700;
+  padding-left: 15px;
+}
+
+.review .card .review-text {
+  font-size: 17px;
+  padding: 15px;
+}
+
+.review .card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.review .card:hover {
+  transform: translateX(35px);
+}
+
+.review .cards-and-review {
+  display: flex;
+}
+
+.review .left-side {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.review .right-side {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  font-size: 25px;
+  width: 30%;
+}
+
+.review .right-heading {
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  padding: 50px 0px 50px 0px;
+  margin-left: 2%;
+}
+
+.review .right-side label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.review .right-side input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.review .right-side textarea {
+  max-height: 300px;
+  min-width: 500px;
+  max-width: 800px;
+  min-height: 100px;
+}
+
+.review .right-side button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.review .heading-and-rating {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+.review .rating {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 15px 0px 0px 10px;
+}
+
+.review .rating input {
+  display: none;
+}
+
+.review .rating label {
+  font-size: 40px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.review .rating input:checked ~ label {
+  color: #ffc107;
+}
+
+hr {
+  margin: 100px;
+  border-top: 1px solid #ccc;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  padding-bottom: 70px;
+}
+
+.footer .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 50px;
+}
+
+.footer .left .name-logo {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  gap: 10px;
+}
+
+.footer .left .logo {
+  border: 1px solid black;
+}
+
+.footer .website-name-foot {
+  font-family: "Helvetica", Courier, monospace;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.footer .left .social {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.footer .left .social img {
+  width: 50px;
+  height: auto;
+}
+
+.footer .left .social a {
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer .left .social a:hover {
+  transform: scale(1.3);
+}
+
+.footer .right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px;
+}
+
+.footer .right ul {
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer .right li {
+  padding: 10px;
+}
+
+.footer .right li {
+  font-size: 22px;
+}
+
+.footer .right {
+  padding-right: 100px;
+}
+
+.footer .right a {
+  text-decoration: none;
+}
+
+.footer ~ hr {
+  margin-bottom: 60px;
+}
+
+.back-to-top img {
+  padding-top: 50px;
+  width: 70px;
+}
+
+.copyright {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-bottom: 60px;
+}
