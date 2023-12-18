@@ -1,11 +1,12 @@
 /* TO DO:
-2. ham burger + make the website scallable
+2. ham burger
 3. modal in best sellers section
 4. dark mode
 */
 
 html {
   scroll-behavior: smooth;
+  width: 100vw;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
   gap: 15vw;
   left: 0;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -76,7 +77,11 @@ body {
 }
 
 .intro-page {
-  margin-top: 35px;
+  margin-top: 7vh;
+  display: flex;
+}
+
+.intro-page .left-intro-page {
   display: flex;
 }
 
@@ -124,10 +129,8 @@ body {
   font-size: 80px;
   text-align: center;
   font-family: "Helvetica", Courier, monospace;
-  letter-spacing: 3px;
   font-weight: bold;
-  word-spacing: 8px;
-  padding-top: 50px;
+  padding-top: 80px;
 }
 
 .best-selling-books .subtitle {
@@ -279,9 +282,9 @@ body {
   color: #282739;
 }
 
-.recommendations .search-box ::placeholder {
+/* .recommendations .search-box ::placeholder {
   color: rgba(0, 0, 0, 0.7);
-}
+} */
 
 .recommendations .search-box button img {
   width: 25px;
@@ -302,10 +305,18 @@ body {
 }
 
 .recommendations .cards {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8%;
-  margin: 80px 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  margin-top: 80px;
+  align-items: center;
+}
+
+.recommendations .cards .cards-1,
+.recommendations .cards .cards-2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
 }
 
 .recommendations .card {
@@ -317,13 +328,14 @@ body {
   align-items: center;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding-top: 30px;
+  padding: 30px 0px 15px 0px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 250px;
 }
 
 .recommendations .card .book-cover {
-  width: 150px;
+  width: 200px;
   height: auto;
   border: 2px solid black;
   margin-bottom: 20px;
@@ -353,6 +365,7 @@ body {
 .recommendations .card:hover {
   transform: scale(1.2);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .recommendations .know-more-button {
@@ -383,12 +396,24 @@ body {
   padding-bottom: 30px;
 }
 
+.review .cards-and-review {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .review .recent-text {
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bolder;
   padding: 50px 50px 30px 0px;
   margin-left: 2%;
+}
+
+.review .left-side {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  min-width: 650px;
 }
 
 .review .cards {
@@ -400,19 +425,21 @@ body {
 .review .card {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  width: 90%;
+  width: 90vw;
   margin-left: 2%;
+  justify-content: center;
 }
 
 .review .card img {
   padding: 10px 30px;
-  width: 100%;
-  height: 100%;
+  width: 150px;
+  height: 150px;
 }
 
 .review .card .text {
@@ -447,22 +474,12 @@ body {
   transform: translateX(35px);
 }
 
-.review .cards-and-review {
-  display: flex;
-}
-
-.review .left-side {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-
 .review .right-side {
   display: flex;
   flex-direction: column;
   margin-left: 5%;
   font-size: 25px;
-  width: 30%;
+  width: 30vw;
 }
 
 .review .right-heading {
@@ -481,7 +498,7 @@ body {
 .review .right-side input[type="text"],
 input[type="email"],
 textarea {
-  width: 100%;
+  width: 100vw;
   padding: 8px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -491,8 +508,8 @@ textarea {
 
 .review .right-side textarea {
   max-height: 300px;
-  min-width: 500px;
-  max-width: 800px;
+  min-width: 50vw;
+  max-width: 100vw;
   min-height: 100px;
 }
 
@@ -541,6 +558,7 @@ hr {
 .footer {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   align-content: center;
   padding-bottom: 70px;
 }
@@ -576,6 +594,7 @@ hr {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  padding-bottom: 50px;
 }
 
 .footer .left .social img {
@@ -592,8 +611,9 @@ hr {
 }
 
 .footer .right {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 70px;
 }
 
@@ -630,6 +650,87 @@ hr {
 .copyright {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  margin-left: 100px;
   margin-bottom: 60px;
+}
+
+@media screen and (max-width: 1300px) {
+  .navigation-bar .nav-links {
+    display: none;
+  }
+
+  .intro-page {
+    flex-wrap: wrap;
+  }
+  .intro-page .left-intro-page {
+    width: 100vw;
+  }
+  .intro-page .big-logo {
+    justify-content: center;
+    align-items: center;
+    margin-left: 10vw;
+    width: 80vw;
+  }
+  .right-intro-page {
+    width: 100vw;
+  }
+  .right-intro-page h1.title {
+    font-size: 15vw;
+  }
+  .right-intro-page h2.subtitle {
+    font-size: 5vw;
+  }
+  .intro-page .best-sellers-button {
+    font-size: 3vw;
+  }
+
+  .best-selling-books .title {
+    font-size: 10vw;
+  }
+  .best-selling-books .subtitle {
+    font-size: 5vw;
+  }
+
+  .recommendations .title {
+    font-size: 9vw;
+  }
+  .recommendations .subtitle {
+    font-size: 4vw;
+  }
+  .recommendations .search-box {
+    width: 80vw;
+  }
+  .recommendations .search-box input {
+    font-size: min(4vw, 35px);
+    padding: 24px 0px;
+  }
+  .recommendations .search-box button img {
+    width: 6vw;
+  }
+  .recommendations .search-box button {
+    width: 15vw;
+    height: 15vw;
+  }
+  .recommendations .card {
+    width: 160px;
+  }
+  .recommendations .card .book-cover {
+    width: 150px;
+  }
+
+  .review .title {
+    font-size: max(11vw, 60px);
+  }
+  .review .recent-text {
+    font-size: max(5vw, 30px);
+  }
+  .review .left-side {
+    width: 85vw;
+    min-width: none;
+  }
+  .review .right-heading {
+    font-size: max(5vw, 30px);
+  }
+  .review .right-side {
+    width: 40vw;
+  }
 }
