@@ -1,5 +1,5 @@
 /* TO DO:
-2. make the website scallable + ham burger
+2. ham burger + make the website scallable
 3. modal in best sellers section
 4. dark mode
 */
@@ -15,27 +15,30 @@ body {
 .navigation-bar {
   display: flex;
   background: rgb(3, 45, 38);
-  justify-content: space-between;
+  gap: 15vw;
+  left: 0;
   align-items: center;
   width: 100%;
   position: fixed;
-  top: 0%;
-  z-index: 1;
+  top: 0;
+  z-index: 2;
 }
 
 .navigation-bar .logo-image-and-text {
   display: flex;
-  gap: 20%;
+  gap: 30px;
 }
 
 .navigation-bar .logo {
   width: 60px;
   height: auto;
+  border: 1px solid rgb(3, 45, 38);
 }
 
 .navigation-bar .website-name {
   color: white;
-  margin-top: 8px;
+  display: flex;
+  align-items: center;
   font-size: 34px;
   font-family: "Helvetica", Courier, monospace;
   transition: transform 0.3s ease;
@@ -49,8 +52,7 @@ body {
 .navigation-bar .nav-links {
   display: flex;
   justify-content: center;
-  margin-top: 4px;
-  margin-right: 5%;
+  align-items: center;
 }
 
 .navigation-bar .nav-links a {
@@ -59,8 +61,8 @@ body {
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
-  font-size: 23px;
-  padding: 0px 30px;
+  font-size: 1.3vw;
+  padding-left: 3vw;
 }
 
 .navigation-bar .nav-links a {
@@ -74,11 +76,12 @@ body {
 }
 
 .intro-page {
+  margin-top: 35px;
   display: flex;
 }
 
 .intro-page .big-logo {
-  width: auto;
+  width: 50vw;
   height: auto;
 }
 
@@ -92,17 +95,17 @@ body {
 
 .right-intro-page h1.title {
   font-family: "Helvetica", Courier, monospace;
-  font-size: 800%;
+  font-size: 7vw;
 }
 
 .right-intro-page h2.subtitle {
-  font-size: 40px;
+  font-size: 2.5vw;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .intro-page .best-sellers-button {
   padding: 8px 15px;
-  font-size: 25px;
+  font-size: 1.5vw;
   text-align: center;
   background-color: #3498db;
   color: white;
@@ -123,23 +126,22 @@ body {
   font-family: "Helvetica", Courier, monospace;
   letter-spacing: 3px;
   font-weight: bold;
-  word-spacing: 10px;
+  word-spacing: 8px;
   padding-top: 50px;
 }
 
 .best-selling-books .subtitle {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
-  padding-top: 30px;
+  padding-top: 40px;
   padding-left: 20px;
 }
 
 .best-selling-books .cards {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  gap: 4%;
   margin: 80px 45px;
 }
 
@@ -155,8 +157,9 @@ body {
   padding: 40px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 350px;
+  width: 300px;
   height: 700px;
+  margin: 0px 25px 50px 25px;
 }
 
 .best-selling-books .card .book-cover {
@@ -172,6 +175,7 @@ body {
 .best-selling-books .card:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .best-selling-books .card .book-title {
@@ -238,15 +242,13 @@ body {
   font-family: "Helvetica", Courier, monospace;
   letter-spacing: 3px;
   font-weight: bold;
-  word-spacing: 10px;
   padding-top: 50px;
 }
 
 .recommendations .subtitle {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
-  padding-top: 30px;
-  padding-left: 20px;
+  padding: 40px 0px 30px 30px;
 }
 
 .recommendations .search-container {
